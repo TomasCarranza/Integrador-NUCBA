@@ -1,0 +1,536 @@
+//Variables
+$main-green: #56FF71;
+$secondary-green: #80FF94;
+$main-bg: #F4F4F4;
+$cards-grey: #EDEDED;
+$letter-gray: #E8E8E8;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//Reset styles:
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* img {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    width: 100vw;
+    max-width: 100%;
+    max-height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+     text-decoration: none;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+//Code
+
+header {
+    width: 100%;
+    height: 85px;
+    background-color: $main-green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    h1{
+        font-style: italic;
+        font-weight: 800;
+        padding: 0em 0.2em 0em 0.2em;
+        letter-spacing: -1px;
+        font-size: 1.55em;
+
+        @media (min-width: 1000px){
+            font-size: 2.5em;
+            padding-left: 0.6em;
+        }
+
+    }
+
+    ul{
+        display: flex;
+        font-size: 0.9em;
+
+        @media (min-width: 700px) {
+            margin-right: 1em;
+        }
+
+        @media (min-width: 1000px){
+            font-size: 1.35em;
+        }
+
+        :nth-child(4){
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        li{
+            padding: 0.35em;
+            display: flex;
+            align-items: center;
+
+            a{
+                color: #000000;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+            }
+
+            img{
+                width: 27px;
+                height: auto;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+    //botones de inicio de sesión y registro
+    .registro{
+        display: none;
+    }
+    }
+
+    //768px brakpoint
+    @media (min-width: 701px){
+        .login_button{
+            display: none;
+        }
+    }
+}
+
+//section
+.hero {
+    @media  (max-width: 700px){
+        .hero_text {
+            img{
+                display: none;
+            }
+        }
+    }
+
+    .hero_text {
+        background-color: $main-green;
+        padding-left: 0.7em;
+        text-transform: uppercase;
+        font-size: 2.1em;
+        font-weight: 900;
+
+        p{
+            max-width: 300px;
+        }
+
+        @media  (min-width: 700px){
+            display: flex;
+            flex-direction: row;
+
+            p{
+                display: flex;
+                align-items: flex-end;
+                font-size: 1.35em;
+                padding-left: 1em;
+            }
+
+            img{
+                width: 400px;
+                height: auto;
+            }
+        }
+
+        @media  (min-width: 1000px){
+            p{
+                font-size: 2em;
+            }
+
+            img{
+                width: 500px;
+                height: auto;
+                margin-left: 3.5em;
+            }
+        }
+
+        @media (min-width: 1200px){
+            padding-left: 7em;
+
+            img{
+                width: 550px;
+                height: auto;
+                margin-left: 6em;
+            }
+        }
+    }
+
+
+}
+
+.full_picado{
+    font-size: 2em;
+    font-weight: 900;
+    font-style: italic;
+    color: $main-green;
+    padding-left: 0.7em;
+    text-transform: uppercase;
+
+    @media  (min-width: 700px){
+        display: flex;
+        align-items: flex-start;
+        max-width: 600px;
+        padding-bottom: 0.5em;
+        padding-left: 2.1em;
+        p{
+            font-size: 1.5em;
+        }
+    }
+
+    @media  (min-width: 1000px){
+        p{
+            font-size: 2em;
+            padding-left: 0.3em;
+        }
+    }
+
+    @media (min-width: 1200px){
+        padding-left: 8.8em;
+        max-width: 800px;
+    }
+}
+
+.ingresos_title {
+        text-align: center;
+        font-size: 0.9em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #949494;
+
+        @media (min-width: 1000px){
+            font-size: 1.35em;
+        }
+}
+
+.nuevos_ingresos {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    /* @media (min-width: 1000px){
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    
+    @media (min-width: 1200px){
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+    .cards{
+        background-color: $cards-grey;
+        width: 280px;
+        height: 365px;
+        border-radius: 15px;
+        margin: 8px;
+        text-align: center;
+
+        @media (min-width: 700px){ 
+            width: 340px;
+            height: 425px;
+        }
+
+        @media (min-width: 1000px){
+            width: 400px;
+            height: 560px;
+            font-size: 1.35em;
+        }
+
+        .producto{
+            width: 250px;
+            height: auto;
+            text-align: center;
+            display: inline-block;
+
+            img{
+                padding-top: 1em;
+            }
+
+             @media (min-width: 700px){
+                width: 300px;
+                height: auto;
+            }
+
+            @media (min-width: 1000px){
+                width: auto;
+                height: 330px ;
+            }
+        }
+
+        input[type=button], input[type=submit], input[type=reset] {
+            margin: 5px;
+            background-color: white;
+            border: none;
+            color: black;
+            text-decoration: none;
+            border-radius: 20px;
+            padding: 0.3em;
+            width: 80px;
+            cursor: pointer;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+
+            @media (min-width: 1000px){
+                font-size: 0.9em;
+                width: 110px;
+            }
+          }
+    }
+
+.flecha_inicio {
+    width: 55px;
+    position: fixed;
+    bottom: 3px;
+    left: 2px;
+
+    @media (min-width: 1000px){
+        width: 70px;
+    }
+}
+
+.slogan{
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1em;
+
+    :nth-child(2){
+        color: $main-green;
+        font-style: italic;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    @media (min-width: 1000px){
+        font-size: 1.9em;
+    }
+}
+
+.marcas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    :nth-child(2){
+        margin-bottom: 2em;
+    }
+
+    .logos{
+        width: 160px;
+        height: auto;
+    }
+
+    @media (min-width: 700px){
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 1.2em;
+    }
+}
+
+//form text
+.contact_text{
+    font-weight: 500;
+    text-align: center;
+    padding-top: 1em;
+
+    @media (min-width: 1000px){
+        font-size: 1.5em;
+    }
+}
+
+//form
+.form{
+    text-align: center;
+
+    input[type=text]{
+        background-color: $letter-gray;
+        border: none;
+        text-align: left;
+        border-radius: 20px;
+        padding: 0.5em;
+        margin: 0.5em;
+        width: 250px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    input::placeholder{
+        color: #AEAEAE;
+    }
+
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: $secondary-green;
+        border: none;
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 0.3em;
+        width: 80px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+      }
+
+      form{
+        @media (min-width: 700px){
+            display: flex;
+            justify-content: center;
+
+            :first-child{
+                width: 50%;
+                align-items: flex-end;
+                justify-content: center;
+
+                input[type=text]{
+                    width: 360px;
+                }
+            }
+
+            :nth-child(2){
+                width: 20%;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 1000px){
+            :first-child{
+                    input[type=text]{
+                    width: 500px;
+                    height: 40px;
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        @media (min-width: 1200px){
+            :first-child{
+                    input[type=text]{
+                    width: 600px;
+                    height: 40px;
+                    font-size: 1.2em;
+                }
+            }
+        }
+      }
+
+      .column{
+        margin: 1em;
+
+        @media (min-width: 700px){
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        @media (min-width: 1200px){
+            margin: 0em;
+        }
+      }
+}
+
+//footer
+footer {
+    width: 100%;
+    height: 90px;
+    background-color: $main-green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+
+    *{
+        z-index: 1;
+    }
+
+    h1{
+        font-style: italic;
+        font-weight: 800;
+        padding: 0em 0.2em 0em 0.2em;
+        letter-spacing: -1px;
+        font-size: 1.5em;
+
+        @media (min-width: 700px){
+            font-size: 1.8em;
+        }
+        @media (min-width: 1000px){
+            font-size: 2.3em;
+
+        }
+
+    }
+
+    ul {
+        text-align: center;
+
+       li{
+        font-size: 0.7em;
+        font-weight: 500;
+
+        @media (min-width: 700px){
+            font-size: 0.95em;
+        }
+
+        @media (min-width: 1000px){
+            font-size: 1.2em;
+        }
+    }
+    }
+
+    ul.redes{
+        display: flex;
+
+        li{
+            padding: 0.35em;
+            display: flex;
+            align-items: center;
+
+            img{
+                width:23px;
+                height: 23px;
+
+                @media (min-width: 700px){
+                    width:30px;
+                    height: 30px;
+                    margin-left: 0.6em;;
+                }
+                @media (min-width: 1000px){
+                    width:33px;
+                    height: 33px;
+                }
+            }
+        }
+    }
+}
